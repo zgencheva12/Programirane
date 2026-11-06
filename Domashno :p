@@ -1,1 +1,37 @@
+1
+string input = Console.ReadLine();
+List<string> textList = input.Split(‘ ‘).ToList();
+2
+List<int> numbers = new List<int>();
+foreach (string item in textList)
+{
+    int num = int.Parse(item);
+    numbers.Add(num);
+}
+ 3
+foreach (int num in numbers)
+{
+    Console.WriteLine(num);
+}
+4 
+Console.WriteLine(numbers.Count);
+5
+List<int> result = new List<int>();
+foreach (int num in numbers)
+{
+    if (num > 0 && num % 2 == 0 && !result.Contains(num))
+    {
+        result.Add(num);
+    }
+}
+6
+Console.WriteLine(string.Join(“, “, result));
+7
+int sum = 0;
+foreach (int num in result)
+{
+    sum += num;
+}
 
+Console.WriteLine(result.Count);
+Console.WriteLine(sum);
